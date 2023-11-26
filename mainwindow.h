@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <popup.h>
+//#include <funcoes.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -45,6 +46,22 @@ private slots:
 
     void on_equalizarHistograma_clicked();
 
+    void on_zoomOut_clicked();
+
+    void on_zoomIn_clicked();
+
+    void on_girarEsquerda_clicked();
+
+    void on_girarDireita_clicked();
+
+    void on_fatorSX_valueChanged(int arg1);
+
+    void on_fatorSY_valueChanged(int arg1);
+
+    void on_convolucao_clicked();
+
+    void on_convulacaoLista_currentTextChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     QImage imgOriginal;
@@ -53,8 +70,13 @@ private:
     QString arq = "/img1.jpg";
     popup popupImgOriginal;
     popup popupImgAlternada;
-    int numeroTons = 1;
+    QString filtroEntrada;
+
+    //Funcoes metodos;
+    int numeroTons = 0;
     int numeroBrilho = 0;
     int numeroContraste = 0;
+    int fatorSX = 1;
+    int fatorSY = 1;
 };
 #endif // MAINWINDOW_H
